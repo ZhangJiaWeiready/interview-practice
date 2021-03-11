@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    $(function() {
+      const wsUrl = 'ws://127.0.0.1:3000'
+      let websocket
+      let i = 0
+      if(window.webSocket) {
+        websocket = new WebSocket(wsurl)
+        websocket.onopen = function (event) {
+          console.log('Connected to websocket server');
+          
+        }
+      }
+    })
+  </script>
+</body>
+</html>

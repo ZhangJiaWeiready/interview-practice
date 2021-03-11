@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#v0.11
+
+# CACHE 你要存哪些文件到浏览器
+CACHE:
+./index.html
+
+# 必须在线才能看到的东西
+NETWORK
+
+~
+# 请求失败的时候要显示的
+FALLBACK
+./a.html ./offline.html

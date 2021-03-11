@@ -1,0 +1,53 @@
+<!--
+ * @Author: zhangjiawei
+ * @Date: 2021-03-09 14:35:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="clickBtn" > 点击 </button>
+  <div class="content"></div>
+  <script>
+    const clickBtn = document.getElementById('clickBtn')
+    // console.log('button--->', clickBtn);
+    const contentElm = document.getElementsByClassName('content') // 集合
+
+
+
+    function Observer () {
+      this.data = {
+        name: ''
+      }
+      let defaultValue = 'leijiajia'
+      // 对象 属性名  get Set
+      Object.defineProperty(this.data, 'name', {
+        get: function(){
+          return defaultValue
+          console.log('我get了');
+        },
+        set: function (newValue){
+          contentElm[0] && (contentElm[0].innerHTML = `<div>${newValue}</div>`)
+          console.log('set--->', newValue);
+        }
+      })
+    }
+    const VM = new Observer()
+    console.log('2---->',VM.data.name);
+
+
+
+
+    clickBtn.addEventListener('click', () => {
+      console.log('3--->',VM.data);
+      VM.data.name && (VM.data.name='张嘉威')
+    })
+    
+  </script>
+</body>
+</html>

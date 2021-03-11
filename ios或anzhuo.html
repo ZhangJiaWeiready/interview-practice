@@ -1,0 +1,30 @@
+<!--
+ * @Author: zhangjiawei
+ * @Date: 2021-03-03 15:18:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+    //有些js代码或者兼容 是安卓手机 有些ios执行
+    const ua = window.navigator.userAgent.toLowerCase()
+    console.log('ua--->',ua);
+    // 在字符串中找到iphone 或者 ipad 就是ios
+
+    let isIos = ua.indexOf('iphone') !== -1 || ua.indexOf('ipad') !== -1
+    if(isIos) {
+      console.log('欢迎ios用户');
+    }else {
+      alert('安卓用户')
+    }
+  </script>
+</body>
+</html>

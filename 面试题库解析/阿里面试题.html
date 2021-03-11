@@ -1,0 +1,65 @@
+<!--
+ * @Author: zhangjiawei
+ * @Date: 2021-03-09 17:35:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  function Foo() {
+    getName = function () {
+        console.log(1)
+    }
+    return this
+  }
+  Foo.getName = function () {
+    console.log(2)
+  }
+  Foo.prototype.getName = function () {
+    console.log(3)
+  }
+  var getName = function () {
+    console.log(4)
+  }
+  function getName() {
+    console.log(5)
+  }
+
+  Foo.getName()     // 1    
+  getName()            // 4 
+  Foo.getName()     // 2
+  getName()            // 4
+  new Foo.getName()    // 
+  new Foo().getName()  // 5
+  new new Foo().getName() // 
+
+
+/**
+  var 和 function  变量提升
+  提前声明 或者赋值
+  function  提前声明 + 定义
+
+  变量提升
+    Foo = AAAFFFooo
+    getName 声明 不复制
+    直接赋值 -- getName = function getName ---> 5   --- 堆 既是个地址又能输出5
+  变量提升完之后代码开始执行
+  代码执行 
+    Foo是一个堆内存 --- 
+      代码字符串
+      getName属性 ---> log2
+      prototype -- 原型对象属性 也是一个堆 
+
+
+
+*/
+</script>
+</body>
+</html>

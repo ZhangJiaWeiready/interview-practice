@@ -1,0 +1,33 @@
+<!--
+ * @Author: zhangjiawei
+ * @Date: 2021-03-02 14:52:22
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    /*
+    * @Author: zhangjiawei
+    * @Date: 2021-03-02 14:52:22
+    */
+    // 装饰器是一个函数
+    function testable(target) {
+      console.log('i love u');
+    }
+    // class 类
+    // 在类或者类属性前面写上@函数名，就相当于要调用这个函数
+    @testable
+    class MytestaleClass {
+
+    }
+    // 类型testable (MytestableClass)
+  </script>
+</body>
+</html>
